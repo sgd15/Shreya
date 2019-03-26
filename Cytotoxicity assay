@@ -1,0 +1,24 @@
+a=np.array([1,2,3]) # Construct 1
+b=np.array([1,2,3]) # Construct 2
+c= np.array([1,2,3]) # Construct 3
+d=np.array([0.1,0.2,0.3]) #Cell free 1
+e=np.array([0.1,0.2,0.3])# Cell free2
+mconstr=np.array([])
+mcf=np.array([])
+mconstr=np.mean(np.array([a,b,c]),axis=0) #Average of construct values
+mcf=np.mean(np.array([d,e]),axis=0)       #AVerage of cell free values
+Sub=np.array([])
+Sub= mconstr-mcf                       #Normalized Construct avg-cell free avg      
+print(Sub)
+norm=np.array([])
+x= np.array(Sub[0])
+print(x)
+norm= (Sub/x)*100  # Calculating percentage viability by normalizing with untreated
+print ('Construct absorbances are',a,b,c)
+print('Cell free absorbances are',d,e)
+print('Average Construct value is',mconstr)
+print ('Average cell free value',mcf)
+print('Cell-Cell free',Sub)
+print( 'Viability is',norm)
+
+
